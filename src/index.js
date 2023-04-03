@@ -30,7 +30,9 @@ function onSearch(event) {
                 Notify.info('Too many matches found. Please enter a more specific name.');
             } 
         })
-        .catch(Notify.failure('Oops, there is no country with that name'))
+        .catch((error) => {
+            Notify.failure('Oops, there is no country with that name')
+        })
 }
 
 function createMarkupOfOneCountry(arr) {

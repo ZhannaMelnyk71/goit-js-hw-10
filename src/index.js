@@ -23,14 +23,12 @@ function onSearch(event) {
     fetchCountries(countryName)
         .then(value => {
             if (value.length === 1) {
-            createMarkupOfOneCountry(value)
-            return;
-            }
-            if (value.length > 1 && value.length <= 10) {
-            createCountryListMarkup(value)
-                return;
-            }
-            Notify.info('Too many matches found. Please enter a more specific name.');
+            createMarkupOfOneCountry(value);
+            } else if (value.length > 1 && value.length <= 10) {
+            createCountryListMarkup(value);
+            } else {
+                Notify.info('Too many matches found. Please enter a more specific name.');
+            } 
         })
         .catch(Notify.failure('Oops, there is no country with that name'))
 }

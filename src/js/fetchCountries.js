@@ -6,7 +6,7 @@ export function fetchCountries(name) {
             if (!responce.ok) {
                 throw new Error('Oops, there is no country with that name');
             }
-            return res.json();
+            return responce.json();
             
         });
 

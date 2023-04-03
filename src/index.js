@@ -8,12 +8,13 @@ const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info')
 const DEBOUNCE_DELAY = 300;
 
-input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY))
+input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
 
 function onSearch(event) {
-    let countryName = ''
-    countryName = event.currentTarget.value.trim()
+
+    const countryName = event.target.value.trim();
+
     if (countryName.length === 0) return;
 
     countryInfo.innerHTML = '';

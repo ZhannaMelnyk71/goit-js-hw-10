@@ -12,7 +12,6 @@ input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY))
 
 
 function onSearch(event) {
-    // event.preventDefault();
     let countryName = ''
     countryName = event.currentTarget.value.trim()
     if (countryName.length === 0) return;
